@@ -5,6 +5,7 @@ import {
   createResolver,
   addImportsDir,
 } from "@nuxt/kit";
+
 import defu from "defu";
 
 export interface SquidexOptions {

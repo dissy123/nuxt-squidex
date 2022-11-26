@@ -1,5 +1,4 @@
-import { defineNuxtPlugin } from "#app";
-
+import { defineNuxtPlugin, useRuntimeConfig } from "#app";
 import { SquidexClient } from "./squidex/SquidexClient";
 
 export default defineNuxtPlugin((nuxtApp) => {

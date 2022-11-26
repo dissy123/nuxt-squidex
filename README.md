@@ -3,16 +3,20 @@
 ## Add config to your nuxt.config.ts
 
 ```
-modules: ["@squidex/nuxt"],
-squidex: {
-appName: "AppName",
-id: "Id",
-secret: "secret",
-baseUrl: "https://cloud.squidex.io/",
-defaultLanguage: "en",
-flatten: true,
-debug: false,
-}
+import { defineNuxtConfig } from "nuxt/config";
+
+export default defineNuxtConfig({
+    modules: ["@squidex/nuxt"],
+    squidex: {
+        appName: "AppName",
+        id: "Id",
+        secret: "secret",
+        baseUrl: "https://cloud.squidex.io/",
+        defaultLanguage: "en",
+        flatten: true,
+        debug: false,
+    }
+);
 ```
 
 ## Development

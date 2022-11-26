@@ -1,4 +1,17 @@
-# Nuxt Module
+# Nuxt Squidex Module
+
+## Add config to your nuxt.config.ts
+
+modules: ["@squidex/nuxt"],
+squidex: {
+appName: "AppName",
+id: "Id",
+secret: "secret",
+baseUrl: "https://cloud.squidex.io/",
+defaultLanguage: "en",
+flatten: true,
+debug: false,
+},
 
 ## Development
 

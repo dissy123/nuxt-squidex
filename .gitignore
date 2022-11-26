@@ -24,6 +24,8 @@ dist
 .env
 .netlify
 
+playground/nuxt.config.ts
+
 # Env
 .env
 

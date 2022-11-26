@@ -2,6 +2,7 @@
 
 ## Add config to your nuxt.config.ts
 
+```
 modules: ["@squidex/nuxt"],
 squidex: {
 appName: "AppName",
@@ -11,7 +12,8 @@ baseUrl: "https://cloud.squidex.io/",
 defaultLanguage: "en",
 flatten: true,
 debug: false,
-},
+}
+```
 
 ## Development
 

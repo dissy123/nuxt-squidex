@@ -1,0 +1,8 @@
+{
+  "name": "@squidex/nuxt",
+  "configKey": "squidex",
+  "compatibility": {
+    "nuxt": "^3.0.0"
+  },
+  "version": "1.0.0"
+}

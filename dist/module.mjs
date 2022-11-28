@@ -22,15 +22,7 @@ const module = defineNuxtModule({
     const { resolve } = createResolver(import.meta.url);
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     nuxt.options.build.transpile.push(runtimeDir);
-    nuxt.options.runtimeConfig.public.squidex = nuxt.options.runtimeConfig.public.strapi, {
-      id: options.id,
-      secret: options.secret,
-      appName: options.appName,
-      baseUrl: options.baseUrl,
-      defaultLanguage: options.defaultLanguage,
-      flatten: options.flatten,
-      debug: options.debug
-    };
+    nuxt.options.runtimeConfig.public.squidex = options;
     addPlugin(resolve(runtimeDir, "plugin"));
     addImportsDir(resolve(runtimeDir, "composables"));
   }

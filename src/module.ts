@@ -6,8 +6,6 @@ import {
   addImportsDir,
 } from "@nuxt/kit";
 
-import defu from "defu";
-
 export interface SquidexOptions {
   id: string;
   secret: string;
@@ -40,8 +38,8 @@ export default defineNuxtModule<SquidexOptions>({
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     nuxt.options.build.transpile.push(runtimeDir);
 
-    nuxt.options.runtimeConfig.public.squidex = defu(
-      nuxt.options.runtimeConfig.public.strapi,
+    (nuxt.options.runtimeConfig.public.squidex =
+      nuxt.options.runtimeConfig.public.strapi),
       {
         id: options.id,
         secret: options.secret,
@@ -50,8 +48,7 @@ export default defineNuxtModule<SquidexOptions>({
         defaultLanguage: options.defaultLanguage,
         flatten: options.flatten,
         debug: options.debug,
-      }
-    );
+      };
 
     addPlugin(resolve(runtimeDir, "plugin"));
 

@@ -1,7 +1,7 @@
 import { SquidexClient } from "../squidex/SquidexClient.mjs";
 import { defineNitroPlugin } from "nitropack/dist/runtime/plugin";
 export default defineNitroPlugin((nitroApp) => {
-  const config = useRuntimeConfig().public.squidex;
+  const config = process.env.RUNTIME_CONFIG["public"].squidex;
   const client = new SquidexClient(
     config.id,
     config.secret,

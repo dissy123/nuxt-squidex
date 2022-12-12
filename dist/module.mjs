@@ -1,6 +1,31 @@
-import jiti from "file:///Users/matthiasdollfuss/00_Dev/nuxt-squidex/node_modules/jiti/lib/index.js";
+import { fileURLToPath } from 'url';
+import { defineNuxtModule, createResolver, addPlugin, addImportsDir } from '@nuxt/kit';
 
-/** @type {import("/Users/matthiasdollfuss/00_Dev/nuxt-squidex/src/module")} */
-const _module = jiti(null, { interopDefault: true, esmResolve: true })("/Users/matthiasdollfuss/00_Dev/nuxt-squidex/src/module.ts");
+const module = defineNuxtModule({
+  meta: {
+    name: "@squidex/nuxt",
+    configKey: "squidex",
+    compatibility: {
+      nuxt: "^3.0.0"
+    }
+  },
+  defaults: {
+    id: "",
+    secret: "",
+    appName: "",
+    baseUrl: "https:/cloud.squidex.com/",
+    defaultLanguage: "de",
+    flatten: true,
+    debug: false
+  },
+  setup(options, nuxt) {
+    const { resolve } = createResolver(import.meta.url);
+    const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
+    nuxt.options.build.transpile.push(runtimeDir);
+    nuxt.options.runtimeConfig.public.squidex = options;
+    addPlugin(resolve(runtimeDir, "plugin"));
+    addImportsDir(resolve(runtimeDir, "composables"));
+  }
+});
 
-export default _module;
+export { module as default };

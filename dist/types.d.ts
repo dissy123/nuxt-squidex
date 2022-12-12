@@ -1,13 +1,6 @@
 
-import { ModuleOptions, ModuleHooks, ModuleRuntimeConfig, ModulePublicRuntimeConfig } from './module'
-
-declare module '@nuxt/schema' {
-  interface NuxtConfig { ['squidex']?: Partial<ModuleOptions> }
-  interface NuxtOptions { ['squidex']?: ModuleOptions }
-  interface NuxtHooks extends ModuleHooks {}
-  interface RuntimeConfig extends ModuleRuntimeConfig {}
-  interface PublicRuntimeConfig extends ModulePublicRuntimeConfig {}
-}
+import {  } from './module'
 
 
-export { default } from './module'
+
+export { SquidexOptions, default } from './module'

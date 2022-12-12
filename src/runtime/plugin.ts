@@ -2,6 +2,7 @@ import { defineNuxtPlugin, useRuntimeConfig } from "#app";
 import { SquidexClient } from "./squidex/SquidexClient";
 
 export default defineNuxtPlugin((nuxtApp) => {
+  console.log("Add Squidex Nuxt Plugin");
   const config = useRuntimeConfig().public.squidex;
 
   const client = new SquidexClient(

@@ -50,7 +50,7 @@ export default defineNuxtModule<SquidexOptions>({
       nitro.plugins = nitro.plugins || [];
 
       // add your custom plugin
-      nitro.plugins.push(resolve("runtime/nitroPlugin/squidexPlugin"));
+      nitro.plugins.push(resolve("runtime/plugin.nitro"));
     });
   },
 });

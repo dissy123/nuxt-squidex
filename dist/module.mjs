@@ -27,7 +27,7 @@ const module = defineNuxtModule({
     addImportsDir(resolve(runtimeDir, "composables"));
     nuxt.hook("nitro:config", (nitro) => {
       nitro.plugins = nitro.plugins || [];
-      nitro.plugins.push(resolve("runtime/nitroPlugin/squidexPlugin"));
+      nitro.plugins.push(resolve("runtime/plugin.nitro"));
     });
   }
 });

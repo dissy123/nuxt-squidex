@@ -23,4 +23,18 @@ const graphdata = await squidex.getGraphQLQuery(`{
 
 console.log(sq_data);
 console.log(graphdata);
+
+const url = "content-events?$orderby=data/Date/iv desc";
+const {
+  data: sq_data2,
+  pending,
+  error,
+  refresh,
+} = reactive(
+  await useFetch("/api/rest", {
+    method: "POST",
+    body: url,
+    key: url.replace(/[^a-zA-Z0-9]/g, ""),
+  })
+);
 </script>

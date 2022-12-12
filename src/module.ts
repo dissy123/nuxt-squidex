@@ -45,12 +45,12 @@ export default defineNuxtModule<SquidexOptions>({
 
     addImportsDir(resolve(runtimeDir, "composables"));
 
-    nuxt.hook("nitro:config", (nitro) => {
+    /*nuxt.hook("nitro:config", (nitro) => {
       // ensure `nitro.plugins` is initialized
       nitro.plugins = nitro.plugins || [];
 
       // add your custom plugin
-      nitro.plugins.push(resolve("runtime/plugin.nitro"));
-    });
+      nitro.plugins.push(resolve("runtime/server/plugins/plugin.nitro"));
+    });*/
   },
 });

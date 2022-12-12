@@ -25,10 +25,6 @@ const module = defineNuxtModule({
     nuxt.options.runtimeConfig.public.squidex = options;
     addPlugin(resolve(runtimeDir, "plugin"));
     addImportsDir(resolve(runtimeDir, "composables"));
-    nuxt.hook("nitro:config", (nitro) => {
-      nitro.plugins = nitro.plugins || [];
-      nitro.plugins.push(resolve("runtime/plugin.nitro"));
-    });
   }
 });
 

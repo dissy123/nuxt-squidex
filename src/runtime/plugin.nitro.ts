@@ -1,9 +1,9 @@
 import { SquidexClient } from "./squidex/SquidexClient";
-import { useRuntimeConfig } from "#imports";
+//import { useRuntimeConfig } from "#imports";
 import { defineNitroPlugin } from "nitropack/dist/runtime/plugin";
 
 export default defineNitroPlugin((nitroApp) => {
-  console.log("Add Squidex Nitro Plugin");
+  /*console.log("Add Squidex Nitro Plugin");
 
   const config = useRuntimeConfig().public.squidex;
 
@@ -20,5 +20,5 @@ export default defineNitroPlugin((nitroApp) => {
     config.flatten,
     config.debug
   );
-  nitroApp.squidex = client;
+  nitroApp.squidex = client;*/
 });

@@ -107,6 +107,10 @@ export class SquidexClient {
     return this.baseUrl + "/api/assets/" + id;
   }
 
+  getContentUrl(url: string) {
+    return this.baseUrl + "/api/content/" + this.appName + "/" + url;
+  }
+
   async fetchBearerToken() {
     if (this.token !== "") {
       return this.token;

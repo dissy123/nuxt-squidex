@@ -17,6 +17,7 @@ export declare class SquidexClient {
     clearBearerToken(): void;
     buildUrl(url: string): string;
     getAssetUrl(id: string): string;
+    getContentUrl(url: string): string;
     fetchBearerToken(): Promise<string>;
     getContentInternal(url: string, unpublished?: boolean): Promise<any>;
     getGraphQLQuery(query: string): Promise<any>;

@@ -1,8 +1,17 @@
 {
-  "name": "@squidex/nuxt",
-  "version": "1.0.0",
+  "name": "nuxt-squidex",
+  "description": "nuxt client for squidex headless cms",
+  "version": "0.0.2",
   "license": "MIT",
   "type": "module",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dissy123/nuxt-squidex"
+  },
+  "config": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": "./dist/module.mjs",

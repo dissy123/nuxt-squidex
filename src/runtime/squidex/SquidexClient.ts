@@ -56,7 +56,11 @@ export class SquidexClient {
     return json.pixelWidth / json.pixelHeight;
   }
 
-  async getContent(url: string, unpublished = false) {
+  async getContent(
+    url: string,
+    unpublished = false,
+    language = this.defaultLanguage
+  ) {
     let actualtime = Date.now();
 
     const json = await this.getContentInternal(
@@ -135,7 +139,11 @@ export class SquidexClient {
     return this.token;
   }
 
-  async getContentInternal(url: string, unpublished = false): Promise<any> {
+  async getContentInternal(
+    url: string,
+    unpublished = false,
+    language = this.defaultLanguage
+  ): Promise<any> {
     // Fetch the bearer token.
     const token = await this.fetchBearerToken();
 
@@ -143,7 +151,7 @@ export class SquidexClient {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
-        "X-Languages": this.defaultLanguage,
+        "X-Languages": language,
         "X-Flatten": this.flatten ? "true" : "false",
         "X-Unpublished": unpublished ? "1" : "0",
       },
@@ -153,7 +161,11 @@ export class SquidexClient {
     return response;
   }
 
-  async getGraphQLQuery(query: string): Promise<any> {
+  async getGraphQLQuery(
+    query: string,
+    language = this.defaultLanguage,
+    unpublished = false
+  ): Promise<any> {
     let actualtime = Date.now();
     const token = await this.fetchBearerToken();
 
@@ -162,6 +174,9 @@ export class SquidexClient {
     const response = await $fetch(this.buildUrl(url), {
       method: "POST",
       headers: {
+        "X-Languages": language,
+        "X-Flatten": this.flatten ? "true" : "false",
+        "X-Unpublished": unpublished ? "1" : "0",
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
